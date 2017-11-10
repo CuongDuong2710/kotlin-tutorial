@@ -1,4 +1,5 @@
 out
 .idea
 *.iml
-*.kotlin_module
+.kotlin_module
+*.xml
