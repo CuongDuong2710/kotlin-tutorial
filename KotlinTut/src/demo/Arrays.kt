@@ -23,10 +23,8 @@ fun main(args: Array<String>) {
     // copy array
     var partArray = myArray.copyOfRange(0, 1)
 
-    // part array length
-    println("part array length: ${partArray.size}") // part array length: 1
-
-    println("part array index 0: ${partArray[0]}") // part array index 0: 1
+    // part array
+    for (x in partArray) println("partArray ${x}")
 
     // get element first
     println("First : ${myArray.first()}") // First : 1
@@ -40,9 +38,7 @@ fun main(args: Array<String>) {
     // creating sqArray with 5 elements and value is x * x
     var sqArray = Array(5, { x -> x * x })
 
-    println(sqArray[2]) // 4
-    println(sqArray[3]) // 9
-    println(sqArray[4]) // 16
+    for (x in sqArray) println("sqArray: ${x}")
 
     // array with int elements
     var array2: Array<Int> = arrayOf(1, 2, 3)
