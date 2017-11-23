@@ -9,6 +9,9 @@ fun main(args : Array<String>) {
     val bowser = Animal("Bowser", 20.0, 13.5)
     bowser.getInfo()
 
+    val dog = Dog("Ky", 15.3, 14.3, "Paul Smith")
+    dog.getInfo()
+
 }
 
 open class Animal(val name: String,
@@ -26,5 +29,16 @@ open class Animal(val name: String,
 
     open fun getInfo(): Unit {
         println("$name is $height tall and weighs $weight")
+    }
+}
+
+class Dog(name: String,
+          height: Double,
+          weight: Double,
+          var owner: String) : Animal(name, height, weight) {
+
+    override fun getInfo() {
+        super.getInfo()
+        println("$name is $height tall and weighs $weight and is owned by $owner")
     }
 }
