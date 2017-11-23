@@ -9,8 +9,11 @@ fun main(args : Array<String>) {
     val bowser = Animal("Bowser", 20.0, 13.5)
     bowser.getInfo()
 
-    val dog = Dog("Ky", 15.3, 14.3, "Paul Smith")
-    dog.getInfo()
+    val spot = Dog("Spot", 15.3, 14.3, "Paul Smith")
+    spot.getInfo()
+
+    val tweety = Bird("Tweety")
+    tweety.fly(10.0)
 
 }
 
@@ -40,5 +43,19 @@ class Dog(name: String,
     override fun getInfo() {
         super.getInfo()
         println("$name is $height tall and weighs $weight and is owned by $owner")
+    }
+}
+
+interface Flyable {
+    var flies : Boolean
+    fun fly(distMile: Double): Unit
+}
+
+class Bird constructor(val name: String,
+                       override var flies: Boolean = true) : Flyable {
+    override fun fly(distMiles: Double) {
+        if (flies) {
+            println("$name flies $distMiles miles")
+        }
     }
 }
